@@ -1,0 +1,24 @@
+<div class="container">
+<div *ngIf="!hiddenform">
+	<h2>New Product</h2>
+	<form id="productform" name="productform" #productdata="ngForm" (ngSubmit)="addproduct(productdata.value);productdata.value=''">
+		<div>
+			<label>name:</label><input type="text" class="form-control" name="name" ngModel>
+		</div>
+		<div>
+			<label>price:</label><input type="text" class="form-control" name="price" ngModel>
+		</div>
+		<div>
+			<input type="submit"  value="add product">
+		</div>
+	</form>
+</div>
+	<div><button type="button" class="btn btn-success" (click)="newproduct()">Add Product</button></div>
+	<div *ngFor="let product of products" >
+		
+		<div><a routerLink="/detail/{{product.id}}">name:{{product.name}}</a></div>
+			<div>price:{{product.price}}</div>
+			<button type="button" class="btn btn-danger" (click)="delete(product.id)">Delete</button>
+			
+	</div>
+</div>

@@ -1,0 +1,9 @@
+<div *ngIf="product">
+	<div><input type="text" class="form-control" [(ngModel)]="product.name"></div>
+	<div><input type="text" class="form-control" [(ngModel)]="product.price"></div>
+	
+</div>
+<div>
+	<button (click)="save()">save</button>
+	<button (click)="goback()">go back</button>
+	</div>
